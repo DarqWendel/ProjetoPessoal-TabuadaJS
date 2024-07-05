@@ -1,28 +1,37 @@
-
+/* Estilização geral */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #bcbcbc;
-    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6f2;
+    color: #4a004a;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-main {
-    background: #3a3a3a;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
+header, footer {
+    background-color: #ff80b3;
+    color: #ffffff;
+    padding: 10px 0;
     width: 100%;
     text-align: center;
 }
 
+main {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
 h1 {
-    color: white;
-    font-size: 24px;
+    font-size: 2.5em;
     margin-bottom: 20px;
+    color: #ff4da6;
 }
 
 .input {
@@ -31,46 +40,61 @@ h1 {
 
 label {
     display: block;
-    font-size: 14px;
-    color: white;
     margin-bottom: 5px;
+    font-weight: bold;
+    color: #ff4da6;
 }
 
-input[type="number"], select {
+input, select {
     width: calc(100% - 20px);
     padding: 10px;
-    border: 1px solid #ccc;
+    margin: 5px 0;
+    border: 2px solid #ff80b3;
     border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 1em;
     text-align: center; /* Centraliza o texto e o placeholder */
 }
 
-input[type="number"]::placeholder {
+input:focus, select:focus {
+    outline: none;
+    border-color: #ff1a8c;
+}
+
+input::placeholder {
     text-align: center; /* Centraliza o placeholder */
 }
 
+.button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
 button {
-    background-color: #252525;
-    color: black;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #45a049;
+button.resultado {
+    background-color: #ff80b3;
+    color: #ffffff;
 }
 
-button[type="reset"] {
-    background-color: #f44336;
-    margin-left: 10px;
+button.resultado:hover {
+    background-color: #ff1a8c;
 }
 
-button[type="reset"]:hover {
-    background-color: #e53935;
+button#limpar {
+    background-color: #cccccc;
+    color: #4a004a;
+}
+
+button#limpar:hover {
+    background-color: #999999;
 }
 
 .resultado {
@@ -78,9 +102,20 @@ button[type="reset"]:hover {
 }
 
 .resultado p {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    font-size: 1.2em;
     margin: 5px 0;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
