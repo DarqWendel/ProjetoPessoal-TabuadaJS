@@ -12,12 +12,10 @@
     <header></header>
     <main>
         <h1>Tabuada</h1>
-
-        <form action="">
+        <form>
             <div class="input">
-                <label for="numero"></label>
+                <label for="numero">Digite um Número:</label>
                 <input type="number" id="n1" placeholder="Digite um Número">
-
                 <select name="operacao" id="operacao">
                     <option value="adicao">+</option>
                     <option value="subtracao">-</option>
@@ -25,18 +23,14 @@
                     <option value="divisao">/</option>
                 </select>
             </div>
-
             <div class="button">
                 <button class="resultado" onclick="calcularTabela()">Mostrar Tabuada</button>
                 <button type="reset">Limpar</button>
             </div>
-
             <div class="resultado"></div>
         </form>
-
     </main>
     <footer></footer>
-
     <script src="/script.js"></script>
 </body>
 
